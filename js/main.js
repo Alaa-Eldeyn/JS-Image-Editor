@@ -30,14 +30,14 @@ upload.onchange = function () {
     myFile.onload = function () {
         myImg.src = myFile.result;
     };
-    myImg.onload = function () {
-        canvas.width = myImg.width;
-        canvas.height = myImg.height;
-        context.drawImage(myImg, 0, 0, canvas.width, canvas.height);
-        myImg.style.display = 'none';
-    }
+    myImg.onload = drawImg()
 };
-
+function drawImg() {
+    canvas.width = myImg.width;
+    canvas.height = myImg.height;
+    context.drawImage(myImg, 0, 0, canvas.width, canvas.height);
+    myImg.style.display = 'none';
+}
 let filters = document.querySelectorAll(".filters ul li input");
 
 filters.forEach(filter => {
@@ -64,6 +64,7 @@ function resetValues() {
     blurry.value = "0"
     hueRotate.value = "0"
     myImg.style.filter = ''
+    drawImg()
 }
 
 download.onclick = function () {
