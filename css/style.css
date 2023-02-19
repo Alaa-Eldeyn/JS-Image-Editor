@@ -1,0 +1,91 @@
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    font-family: cairo;
+}
+.container{
+    background-color: #222;
+    width: 80vw;
+    min-height: 400px;
+    max-width: 1000px;
+    padding: 1.5rem 1rem;
+    border-radius: 10px;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 2fr 1fr;
+    justify-items: center;
+    align-items: center;
+    color: white;
+    margin: 1rem 0;
+}
+.filters{
+    justify-self: end;
+}
+li{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    direction: rtl;
+    text-align: start;
+    padding-bottom: 2rem;
+    min-width: 260px;
+}
+li:last-of-type{
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: space-around;
+    padding-bottom: 0;
+}
+@media screen and (max-width: 650px){
+    .container{
+        grid-template-columns: 1fr;
+    }
+    .filters{
+        justify-self: center;
+    }
+    li{
+        padding-bottom: 1rem;
+    }
+}
+.filters li:last-of-type a, .filters li:last-of-type span{
+    background-color: #007a0a;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: .2s;
+}
+.filters li:last-of-type a:hover, .filters li:last-of-type span:hover{
+    background-color: #006609;
+}
+#upload{
+    display: none;
+}
+.img .img-box{
+    max-width: 400px;
+}
+img,canvas{
+    width: 100%;
+}
+.img .uploadBtn{
+    text-align: center;
+    padding-top: 20px;
+}
+.img .uploadBtn label{
+    padding: 2px 10px;
+    border: 2px dashed #007a0a;
+    cursor: pointer;
+    transition: .2s;
+}
+.img .uploadBtn label:hover{
+    background-color: #007a0a;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
